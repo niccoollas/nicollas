@@ -30,6 +30,9 @@ Body {
     display: nome;
     flex-direction: column;
     justify-content: space-between;
+    width: 2px;
+    height: 21px;
+    cursor: pointer;
 
 }
 .bar {
@@ -42,9 +45,69 @@ Body {
 
 .nav menu {
     display: flex;
+    list-style: none;
 }
 
 .nav-item {
     margin-left: 2rem;
-
 }
+
+.nav link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3 ease;
+}
+
+nav link :hover {
+    color: yellow;
+}
+
+main {
+    padding: 2rem;
+}
+
+/*media Query para dispoitivos */
+@media (max-width: 700) 
+    .hamburger {
+        display-flex
+    }
+
+.nav menu {
+    position: absolute;
+    top: 100%;
+    background-color: 0;
+    width: 100%;
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    clip-path: circle(0px at 90%-10%);
+    transition: clip-path 0.5s ease ease-in-out ;
+    pointer-events: none;
+}
+
+.na.menu :active {
+    clip-path: circle 100px at 90%-10%;
+    pointer-events: all;
+}
+
+.nav-item {
+    margin: 1rem;
+}
+
+.hamburger.active .bar :nth-child(1) {
+    transition: tranlatery(9px) rotate(45deg);
+}
+
+.hamburger.active .bar :nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar :nth-child(3) {    
+    transition: tranlatery(-9px) rotate(-45deg);
+}
+
+
+
+
+
